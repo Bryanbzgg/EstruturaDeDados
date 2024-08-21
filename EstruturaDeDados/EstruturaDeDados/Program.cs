@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.Collections;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -68,5 +70,78 @@
         {
             Console.WriteLine($"{carro.Key} - {carro.Value}");
         }
+
+        Console.WriteLine("");
+        Console.WriteLine("====================================");
+        Console.WriteLine("");
+
+
+        //trabalhando com fila
+        //Criar uma fila (Queue)
+        Queue<string> filaBanco = new Queue<string>();
+
+        filaBanco.Enqueue("André");
+        filaBanco.Enqueue("Cleito");
+        filaBanco.Enqueue("Jorjin");
+        filaBanco.Enqueue("Neneca");
+
+        foreach (var pessoa in filaBanco)
+        {
+            Console.WriteLine(pessoa);
+        }
+
+        //retirar um elemento da fila
+        filaBanco.Dequeue();
+
+        Console.WriteLine("");
+        Console.WriteLine("====================================");
+        Console.WriteLine("");
+        foreach (var pessoa in filaBanco)
+        {
+            Console.WriteLine(pessoa);
+        }
+
+        //verificar se existe um elemento na fila
+
+        bool achou = filaBanco.Contains("Neneca");
+        if (achou == true)
+        {
+            Console.WriteLine("A pessoa está na fila");
+        }
+        else
+        {
+            Console.WriteLine("A pessoa não esta na fila");
+        }
+
+
+        Console.WriteLine("");
+        Console.WriteLine("====================================");
+        Console.WriteLine("");
+
+        //trabalhando com pilha (stack)
+        //criando uma pilha
+        Stack<string> livros = new Stack<string>();
+
+        //add elementos em uma pilha
+
+        livros.Push("supernatural");
+        livros.Push("chapeu azul");
+        livros.Push("guerra na terra");
+
+        foreach (var livro in livros)
+        {
+            Console.WriteLine(livro);
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("====================================");
+        Console.WriteLine("");
+
+        livros.Pop();
+        foreach (var livro in livros)
+        {
+            Console.WriteLine(livro);
+        }
+
     }
 }
